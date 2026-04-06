@@ -20,14 +20,14 @@ const task = new Tax(200, 300)
 console.log(task.addNewTask(500))
 // console.log(task.)
 type Guitarist = {
-    name: string,
+    nameG: string,
     active?: boolean,
     albums: (string | number)[]
 }
 
 const guitar: Guitarist = {
-    name: "victor",
-    // active: false,
+    nameG: "victor",
+    active: false,
     albums: [23, 33, "i love you"]
 }
 console.log(guitar.albums)
@@ -65,8 +65,24 @@ interface Student {
     GPA: number,
     classes: number[]
 }
-
+interface School extends Student {
+    schName: string,
+    schPobNum: number
+}
+const schoolProp: School = {
+    schName: 'bibo oluwa',
+    schPobNum: 22,
+    nameG: 'iii',
+    name: 'fffffff',
+    GPA: 44,
+    classes: [2, 2, 3, 5, 7]
+}
+const readSchool = (item: School): number => {
+    const mapSchool = schoolProp.classes.map(item => item * schoolProp.schPobNum)
+    return mapSchool.reduce((acc, newVal) => acc + newVal, 0)
+}
 const student: Student = {
+    class: [20],
     name: 'Victor',
     GPA: 3.5,
     classes: [100,200,300]

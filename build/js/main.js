@@ -14,8 +14,8 @@ class Tax {
 const task = new Tax(200, 300);
 console.log(task.addNewTask(500));
 const guitar = {
-    name: "victor",
-    // active: false,
+    nameG: "victor",
+    active: false,
     albums: [23, 33, "i love you"]
 };
 console.log(guitar.albums);
@@ -34,7 +34,20 @@ const transaction = {
     school: 4,
     food: 10
 };
+const schoolProp = {
+    schName: 'bibo oluwa',
+    schPobNum: 22,
+    nameG: 'iii',
+    name: 'fffffff',
+    GPA: 44,
+    classes: [2, 2, 3, 5, 7]
+};
+const readSchool = (item) => {
+    const mapSchool = schoolProp.classes.map(item => item * schoolProp.schPobNum);
+    return mapSchool.reduce((acc, newVal) => acc + newVal, 0);
+};
 const student = {
+    class: [20],
     name: 'Victor',
     GPA: 3.5,
     classes: [100, 200, 300]
